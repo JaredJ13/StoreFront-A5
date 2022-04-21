@@ -1,65 +1,73 @@
- .productCard{
-      
-      
-      margin: 2rem auto 4rem;
- 
-    footer{
+.productCard {
+
+    padding: 1rem;
+    margin: 2rem auto 4rem;
+    height: 350px;
+
+    footer {
         margin: 1rem 0;
     }
-    button{
-        border:none;
+
+    button {
+        border: none;
         background-color: #3b82f6;
-        color:#eff6ff;
+        color: #eff6ff;
         padding: 0.5rem 2rem;
         border-radius: 3px;
-        font-size:1.25rem;
+        font-size: 1.25rem;
     }
-    
- }
 
- .price{
-   font-size:1.75rem;
-   font-weight: 200;
-   color:#64748b;
-   margin: 0.25rem 0;
- }
+    header {
+        width: 14rem;
+    }
+}
 
- .description{
+
+
+.price {
+    font-size: 1rem;
+    font-weight: 200;
+    color: #64748b;
+    margin: 0.25rem 0;
+}
+
+.description {
     font-size: 14px;
-    color:#94a3b8;
+    color: #94a3b8;
 
- }
+}
 
- .name{
-     font-size: 2.75rem;
-     font-weight: 800;
-     color:#1e293b;
- }
+.name {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #1e293b;
+}
 
-  
- @media (min-width:600px){
-    .productCard{
-        display:flex;
+
+@media (min-width:600px) {
+    .productCard {
+        display: flex;
         flex-direction: column;
         justify-content: space-between;
         margin: 0;
     }
-    .price{
-        font-size:1.75rem;
+
+    .price {
+        font-size: 1.75rem;
         font-weight: 200;
-        color:#64748b;
+        color: #64748b;
         margin: 0.25rem 0;
-      }
-     
-      .description{
-         font-size: 14px;
-         color:#94a3b8;
-     
-      }
-     
-      .name{
-          font-size: 1.75rem;
-          font-weight: 800;
-          color:#1e293b;
-      }
+    }
+
+    .description {
+        font-size: 14px;
+        color: #94a3b8;
+
+    }
+
+    .name {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: #1e293b;
+    }
 }

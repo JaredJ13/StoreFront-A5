@@ -4,6 +4,7 @@ import { loadStripe } from '@stripe/stripe-js'
 
 import { PageTitle } from './../components/PageTitle'
 import ProductCard from '../components/ProductCard/ProductCard'
+import { pane } from "./../styles/home.module.scss"
 
 
 // SSG static site generation
@@ -23,7 +24,7 @@ export default function Home(props) {
                 <title>StoreFront</title>
             </Head>
             <PageTitle tagline="Product Specials" title="storefront" />
-            <main>
+            <main className={pane}>
                 {products.map(product => <ProductCard product={product} key={product.uid} />)}
             </main>
         </>
@@ -35,7 +36,7 @@ export default function Home(props) {
 export async function getStaticProps() {
     // node.js code ... web apis filesystem read writes fetch
     // next.js five top level fetch api...
-    const res = await fetch('https://storefront-8ed8e-default-rtdb.firebaseio.com/products.json')
+    const res = await fetch('https://happydog-c44c0-default-rtdb.firebaseio.com/products.json')
     const productData = await res.json()
     const products = Object.values(productData)
     return {

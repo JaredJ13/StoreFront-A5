@@ -13,14 +13,14 @@ function ProductCard({ children, product, ...props }) {
   return (
     <aside className={productCard}>
       <header>
-        <Image
+        <Image className='image'
           loader={myLoader}
           src={imageUrl}
           alt={productName}
-          width={418}
-          height={240}
-          quality={50}
-          layout="intrinsic"
+          width={150}
+          height={150}
+          quality={100}
+          layout="responsive"
         />
 
       </header>
