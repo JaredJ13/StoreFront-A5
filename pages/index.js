@@ -2,45 +2,36 @@ import { useState } from 'react'
 import { PageTitle } from './../components/PageTitle'
 import { Button } from '../components/Button'
 import { useEffect } from 'react'
-import { User } from '../components/User'
+import ProductCard from '../components/ProductCard/ProductCard'
 
-// CRA version of data loading
 
-export default function Home() {
+// SSG static site generation
 
-    const [isLoading, setIsLoading] = useState(false)
-    const [userData, setUserData] = useState([])
+export default function Home(props) {
 
-    useEffect(() => {
-        async function loadExternalDataTheCRAWay() {
-            const res = await fetch(`https://jsonplaceholder.typicode.com/users`)
-            const data = await res.json()
-            setUserData(data)
-        }
-        loadExternalDataTheCRAWay()
-    }, [])
-
+    const products = props.products
 
     return (
         <>
-            <PageTitle title="StoreFront" tagline="featured products" />
-            <div style={{ textAlign: "center" }}>
-                <Button
-                    style={{ margin: "2rem 0 0" }}
-                    onClick={() => setIsLoading(!isLoading)}
-                >Get some data
-                </Button>
-                {
-                    isLoading && <p style={{ padding: "1rem" }}>This is my output</p>
-                }
-            </div>
+            <PageTitle tagline="Product Specials" title="storefront" />
             <main>
-                {
-                    userData.map(({ id, name, email, username }) => <User key={id} name={name} email={email} username={username} />)
-                }
+                {products.map(product => <ProductCard product={product} key={product.uid} />)}
             </main>
-
         </>
     )
 }
 
+// getStaticProps ====> server Node.js
+
+export async function getStaticProps() {
+    // node.js code ... web apis filesystem read writes fetch
+    // next.js five top level fetch api...
+    const res = await fetch('https://storefront-8ed8e-default-rtdb.firebaseio.com/products.json')
+    const productData = await res.json()
+    const products = Object.values(productData)
+    return {
+        props: {
+            products
+        }
+    }
+}
