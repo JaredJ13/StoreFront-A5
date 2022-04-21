@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useState } from 'react'
 import { PageTitle } from './../components/PageTitle'
 import { Button } from '../components/Button'
@@ -11,8 +12,17 @@ export default function Home(props) {
 
     const products = props.products
 
+    console.log(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+    console.log(process.env.STRIPE_SECRET_KEY)
+
     return (
         <>
+            <Head>
+                <meta charset="UTF-8" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>StoreFront</title>
+            </Head>
             <PageTitle tagline="Product Specials" title="storefront" />
             <main>
                 {products.map(product => <ProductCard product={product} key={product.uid} />)}
@@ -32,6 +42,7 @@ export async function getStaticProps() {
     return {
         props: {
             products
-        }
+        },
+        revalidate: 60
     }
 }
