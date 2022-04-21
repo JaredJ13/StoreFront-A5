@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { useState } from 'react'
+
+import { loadStripe } from '@stripe/stripe-js'
+
 import { PageTitle } from './../components/PageTitle'
-import { Button } from '../components/Button'
-import { useEffect } from 'react'
 import ProductCard from '../components/ProductCard/ProductCard'
 
 
@@ -12,8 +12,7 @@ export default function Home(props) {
 
     const products = props.products
 
-    console.log(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
-    console.log(process.env.STRIPE_SECRET_KEY)
+    const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 
     return (
         <>

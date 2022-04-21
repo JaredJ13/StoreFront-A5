@@ -1,12 +1,10 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { getProduct } from "../../libs/getProduct";
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
 
-  if (req.method == "POST") {
-    console.log(req.body.uid);
-    res.status(200).send(`Post Request Product UID: ${req.body.uid}`);
-  } else {
-    res.status(200).send(`not a post request`);
-  }
+  const product = await getProduct(req.body.uid)
+  console.log(product)
+
+  res.send("you have to return something")
 
 }
