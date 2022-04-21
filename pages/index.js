@@ -4,7 +4,7 @@ import { loadStripe } from '@stripe/stripe-js'
 
 import { PageTitle } from './../components/PageTitle'
 import ProductCard from '../components/ProductCard/ProductCard'
-import { pane } from "./../styles/home.module.scss"
+import { pane } from "./../styles/Home.module.scss"
 
 
 // SSG static site generation
