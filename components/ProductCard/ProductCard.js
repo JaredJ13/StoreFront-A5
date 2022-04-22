@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image'
 import { productCard, price, name, description } from './styles.module.scss'
+import { Button } from './../Button'
 
 
 const myLoader = ({ src, width, quality }) => {
@@ -30,7 +31,7 @@ function ProductCard({ children, product, ...props }) {
       <footer>
         <form action="/api/checkout" method="POST">
           <input type="hidden" name="uid" value={uid} />
-          <button type="submit">Buy Now</button>
+          <Button type="submit">Buy Now</Button>
         </form>
       </footer>
     </aside>
