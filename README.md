@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Stripe Integration using Next.JS
 
-## Getting Started
+Practical 5 - This practical involved me adding stripe checkout/purchase functionality for singular products stored in a firebase realtime database.
 
-First, run the development server:
+## Description
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+I had to fetch the json data from my firebase rtd and display the data in individual product cards, I then had to add the functionality that redirects the user to a stripe powered purchase page when the user clicks the buy button on a product. I used Next.JS for this project along with scss styling.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Dependencies
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+* react
+* react-dom
+* sass
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Dev Dependencies
+* @stripe/stripe-js
+* eslint
+* eslint-config-next
+* stripe
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Installing
 
-## Learn More
+* In order to make this function with your database you will have to add in your own firebase configuration keys to the .env.local file.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Executing program
+* Install dependencies using "npm i"
+* Run using script "npm run dev"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Authors
 
-## Deploy on Vercel
+* Jared Jahnke
+* jaredj9914@hotmail.com
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
